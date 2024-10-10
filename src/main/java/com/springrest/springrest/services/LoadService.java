@@ -13,7 +13,9 @@ public interface LoadService {
 
 	public Load updateLoad(Load load);
 
-	public List<Load> getLoadsByShipperId(String shipperId);
+	//public List<Load> getLoadsByShipperId(String shipperId);
+
+	public void deleteLoad(long long1);
 
 	//public List<Load> getShipperLoad(String shipperId);
 	

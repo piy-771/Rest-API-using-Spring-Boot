@@ -33,17 +33,17 @@ public class MyController {
 		return this.loadServices.getLoads();
 		}
 	
-//	@GetMapping("/load")
-//    public List<Load> getShipperLoad(){
-//			return this.loadServices.getShipperLoad(shipperId);
-//		}
-	
 
+	
+//get load by id
 	@GetMapping("load/{loadId}")
 	public Load getLoad(@PathVariable String loadId) {
 		return this.loadServices.getLoad(Long.parseLong(loadId));
 	}
 	
+	
+	
+//get load by shipper id
 //	@GetMapping("/load")
 //	public List<Load> getLoadsByShipperId(@RequestParam String shipperId ){
 //		return this.loadServices.getLoadsByShipperId(shipperId);
@@ -51,16 +51,21 @@ public class MyController {
 //	}
 	
 	
+	//add load using POST request
 	@PostMapping("/load")
 	public Load addLoad(@RequestBody Load load){
 		return this.loadServices.addLoad(load);
 	}
 	
+	
+	//update load using PUT request
 	@PutMapping("/load")
 	public Load updateLoad(@RequestBody Load load) {
 		return this.loadServices.updateLoad(load);
 	}
 	
+	
+	//delete load by DELETE request
 	@DeleteMapping("/load/{loadId}")
 	public ResponseEntity<HttpStatus> deleteLoad(@PathVariable String loadId){
 		try {

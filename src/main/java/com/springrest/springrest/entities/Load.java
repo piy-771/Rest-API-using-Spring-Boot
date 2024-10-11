@@ -25,7 +25,6 @@ public class Load {
 	
 	public Load() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public long getId() {
 		return id;

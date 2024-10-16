@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +29,7 @@ public class MyController {
 	
 	//get the load
 	
+	@CrossOrigin
 	@GetMapping("/load")
 	public List<Load> getLoads(){
 		return this.loadServices.getLoads();
@@ -40,9 +42,6 @@ public class MyController {
 	public Load getLoad(@PathVariable String loadId) {
 		return this.loadServices.getLoad(Long.parseLong(loadId));
 	}
-	
-	
-	
 //get load by shipper id
 //	@GetMapping("/load")
 //	public List<Load> getLoadsByShipperId(@RequestParam String shipperId ){
@@ -52,6 +51,7 @@ public class MyController {
 	
 	
 	//add load using POST request
+	@CrossOrigin
 	@PostMapping("/load")
 	public Load addLoad(@RequestBody Load load){
 		return this.loadServices.addLoad(load);
@@ -66,6 +66,7 @@ public class MyController {
 	
 	
 	//delete load by DELETE request
+	@CrossOrigin
 	@DeleteMapping("/load/{loadId}")
 	public ResponseEntity<HttpStatus> deleteLoad(@PathVariable String loadId){
 		try {
